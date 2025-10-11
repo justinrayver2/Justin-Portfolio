@@ -1,7 +1,7 @@
 Justin — your final portfolio package (dark purple edition)
 
 Files included:
-- index.html        (open directly in browser)
+- index.html        (open directly in browser or its on vercel)
 - style.css         (main stylesheet)
 - picture/          (place your profile image as picture/picture_na.jpg)
 - Note: Contact form action is set to send to: justinrayver.14@gmail.com via Formspree's email endpoint.
