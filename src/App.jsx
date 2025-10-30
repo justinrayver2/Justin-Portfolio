@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./style.css";
-
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Resume from "./components/Resume";
@@ -40,4 +39,3 @@ export default function App() {
     </>
   );
 }
-

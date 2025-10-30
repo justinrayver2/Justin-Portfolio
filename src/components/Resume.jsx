@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-
+import React from "react";
 
 export default function Resume() {
   return (
@@ -18,7 +17,7 @@ export default function Resume() {
         <div className="resume-section">
           <h3>Experience</h3>
           <p>
-            <strong>Front-End Developer (Beginner)</strong><br />
+            <strong>Front-End Developer (B)</strong><br />
             Built responsive, user-friendly websites using React, HTML, CSS, and JavaScript.
           </p>
           <p>

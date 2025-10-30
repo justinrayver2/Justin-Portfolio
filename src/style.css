@@ -11,7 +11,7 @@
 html,
 body {
   height: 100%;
-  background: #0b0710;
+  background: #0b0710; /* solid dark background */
   color: #e9eef7;
   overflow-x: hidden;
   transition: background 400ms ease;
@@ -73,42 +73,13 @@ body {
   60%, 100% { opacity: 1; filter: blur(0); transform: translateY(0); }
 }
 
-/* ====== BACKGROUND GRADIENT ====== */
+/* ====== BACKGROUND (Solid) ====== */
 .bg-gradient {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background: linear-gradient(120deg, #1b0b2a 0%, #241032 30%, #1b1540 60%, #070814 100%);
-  background-size: 400% 400%;
-  animation: bgShift 20s ease-in-out infinite;
-  opacity: 0.96;
+  display: none; /* removed gradient */
 }
 
-@keyframes bgShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ====== BACKGROUND STREAKS ====== */
 .bg-streaks {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.32;
-  background-image:
-    radial-gradient(600px 120px at 10% 20%, rgba(124, 58, 237, 0.12), transparent 20%),
-    radial-gradient(500px 100px at 85% 70%, rgba(6, 182, 212, 0.1), transparent 20%),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 50%, rgba(255, 255, 255, 0.02) 100%);
-  mix-blend-mode: screen;
-  filter: blur(28px) saturate(120%);
-  animation: streaksMove 30s linear infinite;
-}
-
-@keyframes streaksMove {
-  0%, 100% { transform: translateX(-6%) rotate(-6deg); }
-  50% { transform: translateX(6%) rotate(-4deg); }
+  display: none; /* removed streaks */
 }
 
 /* ====== HERO SECTION ====== */
@@ -134,15 +105,8 @@ body {
 
 .hero-pic::after {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(124, 58, 237, 0.4), transparent 70%);
-  filter: blur(60px);
-  z-index: -1;
+  background: transparent; /* removed purple glow */
+  filter: none;
 }
 
 .hero-pic img {
@@ -306,7 +270,6 @@ section {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
-  transition: color 0.3s, transform 0.2s;
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -314,7 +277,6 @@ section {
 
 .project-links a:hover {
   color: #7c3aed;
-  transform: scale(1.05);
 }
 
 /* ====== CONTACT ====== */
@@ -327,12 +289,11 @@ section {
 .social-links a {
   color: #e9eef7;
   font-size: 1.5rem;
-  transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s;
 }
 
 .social-links a:hover {
   color: #7c3aed;
-  transform: scale(1.2);
 }
 
 .contact-form {
@@ -418,4 +379,12 @@ section {
 
 .read-more:hover {
   text-decoration: underline;
+}
+
+/* ====== FOOTER ====== */
+.site-footer {
+  padding: 2rem 0;
+  text-align: center;
+  color: #cfeffd;
+  background: transparent;
 }
