@@ -1,4 +1,5 @@
-import React from "react";
+import { useEffect } from "react";
+
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaFigma, FaGitAlt, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export default function Portfolio() {
@@ -28,7 +29,7 @@ export default function Portfolio() {
       title: "UI/UX",
       desc: "Stylish product landing page with animations and responsive layout.",
       demo: "https://www.figma.com/design/bEm6WZiCrQEuGs4T4PC5aI/MyWay_Compile?node-id=0-1&p=f&t=8mPY22s9fKetfn1Q-0",
-      
+
     },
   ];
 
