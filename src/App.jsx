@@ -13,11 +13,10 @@ import Preloader from "./components/Preloader";
 export default function App() {
   useEffect(() => {
     const preloader = document.getElementById("preloader");
-    const siteRoot = document.querySelector(".site-root");
-
     window.addEventListener("load", () => {
-      preloader?.classList.add("hide");
-      siteRoot?.classList.add("loaded");
+      if (preloader) {
+        preloader.classList.add("hide");
+      }
     });
   }, []);
 

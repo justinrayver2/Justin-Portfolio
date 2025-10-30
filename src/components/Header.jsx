@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Header() {
-  const handleNavClick = (e, id) => {
-    e.preventDefault();
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const [visible, setVisible] = useState(false);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <header
@@ -18,20 +18,52 @@ export default function Header() {
         backgroundColor: "rgba(20, 20, 35, 0.95)",
         color: "#fff",
         zIndex: 1000,
-        padding: "10px 20px",
+        padding: "16px 24px",
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "flex-start",
         alignItems: "center",
+        boxShadow: "0 2px 12px rgba(0, 0, 0, 0.4)",
+        backdropFilter: "blur(6px)",
+        transition: "all 0.4s ease",
       }}
     >
-      <h1 style={{ margin: 0 }}>JR</h1>
-      <nav>
-        <a href="#hero" onClick={(e) => handleNavClick(e, "hero")} style={{ marginRight: "1rem", color: "#e9eef7" }}>Home</a>
-        <a href="#resume" onClick={(e) => handleNavClick(e, "resume")} style={{ marginRight: "1rem", color: "#e9eef7" }}>Resume</a>
-        <a href="#portfolio" onClick={(e) => handleNavClick(e, "portfolio")} style={{ marginRight: "1rem", color: "#e9eef7" }}>Portfolio</a>
-        <a href="#blog" onClick={(e) => handleNavClick(e, "blog")} style={{ marginRight: "1rem", color: "#e9eef7" }}>Blog</a>
-        <a href="#contact" onClick={(e) => handleNavClick(e, "contact")} style={{ color: "#e9eef7" }}>Contact</a>
-      </nav>
+      <div
+        style={{
+          background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
+          width: "70px",
+          height: "70px",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 4px 20px rgba(124, 58, 237, 0.4)",
+          cursor: "pointer",
+          transform: visible
+            ? "translateX(0) scale(1)"
+            : "translateX(-50px) scale(0.8)",
+          opacity: visible ? 1 : 0,
+          transition: "all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)",
+        }}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+        onMouseLeave={(e) =>
+          (e.currentTarget.style.transform = visible
+            ? "translateX(0) scale(1)"
+            : "translateX(-50px) scale(0.8)")
+        }
+      >
+        <h1
+          style={{
+            margin: 0,
+            fontSize: "2rem",
+            letterSpacing: "1px",
+            color: "#fff",
+            fontWeight: "700",
+          }}
+        >
+          JR
+        </h1>
+      </div>
     </header>
   );
 }
