@@ -19,7 +19,20 @@ body{ background:#0b0710; color:#e9eef7; overflow-x:hidden; transition: backgrou
 @keyframes streaksMove{ 0%{ transform: translateX(-6%) translateY(0) rotate(-6deg) } 50%{ transform: translateX(6%) translateY(2%) rotate(-4deg) } 100%{ transform: translateX(-6%) translateY(0) rotate(-6deg) } }
 
 /* Header / Nav */
-.site-header{ position:fixed; top:0; left:0; right:0; z-index:9997; background: linear-gradient(180deg, rgba(10,8,18,0.35), rgba(10,8,18,0.15)); backdrop-filter: blur(6px); box-shadow: 0 8px 30px rgba(2,6,23,0.5); transform: translateY(-8px); opacity:0; transition: all 520ms ease; }
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9997;
+  background: linear-gradient(180deg, rgba(10, 8, 18, 0.35), rgba(10, 8, 18, 0.15));
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.5);
+  transform: translateY(-8px);
+  opacity: 0;
+  transition: all 520ms ease;
+}
 .site-header.fade-in{ transform: translateY(0); opacity:1; }
 .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
 .logo{ display:flex; align-items:center; gap:10px; }
@@ -83,7 +96,28 @@ nav .navlinks li a:hover{ transform:translateY(-3px); color:#fff; text-shadow:0 
 .site-footer{ padding:26px 0; text-align:center; color:#9fb9c8; border-top:1px solid rgba(255,255,255,0.02); margin-top:40px; }
 
 /* Back to top */
-#backToTop{ position:fixed; right:26px; bottom:26px; width:48px; height:48px; border-radius:999px; display:grid; place-items:center; background: linear-gradient(135deg, rgba(125,211,252,0.08), rgba(139,92,246,0.06)); backdrop-filter: blur(6px); box-shadow: 0 6px 20px rgba(2,6,23,0.5); color:#fff; z-index:9998; cursor:pointer; opacity:0; transform: translateY(8px); transition: all 320ms ease; pointer-events:none; }
+#backToTop {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.08), rgba(139, 92, 246, 0.06));
+-webkit-backdrop-filter: blur(6px);
+backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.5);
+  color: #fff;
+  z-index: 9998;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 320ms ease;
+  pointer-events: none;
+}
 #backToTop.visible{ opacity:1; transform: translateY(0); pointer-events:auto; }
 
 /* Responsive */
